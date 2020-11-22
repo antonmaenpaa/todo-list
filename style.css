@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+}
+
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+input,
+button {
+    width: 10rem;
+}
+
+button {
+    margin-top: 1rem;
+}
