@@ -11,7 +11,13 @@ function main() {
 
 function addEventListeners() {
     const addToList = document.getElementById('addItem');
+    const deleteFromList = document.getElementById('deleteItem');
+    
+
     addToList.addEventListener('click', addItemToList);
+    deleteFromList.addEventListener('click', deleteItemFromList);
+    
+    
 }
 
 
@@ -21,10 +27,36 @@ function addItemToList() {
     let liItem = document.createElement('li');
     liItem.appendChild(document.createTextNode(userInput.value));
     ulList.appendChild(liItem);
-   
-    // console.log(ulList)
-    // let ulList = document.getElementById('todo-list');
-    // let liItem = document.createElement('li');
-    // liItem.innerText = userInput;
 
+    const item = document.querySelector('ul');
+    item.addEventListener('click', selectItem);
+   
+}
+
+function selectItem(event){
+    let items = document.querySelectorAll('#todo-list li');
+    for (let item of items) {
+        if (event.target === item ) {
+            event.target.style.color = 'red';
+            
+        
+        }
+    }
+    // let ulList = document.querySelectorAll('ul li');
+    // for (let item of ulList) {
+    //     if (event.target === item) {
+    //         item.style.color = 'red';
+    //     }
+    // }
+} 
+
+function deleteItemFromList () {
+    let items = document.querySelectorAll('#todo-list li');
+    for (let item of items) {
+        if (item.style.color = 'red' ) {
+            item.remove(item);
+            
+        
+        }
+    }
 }
